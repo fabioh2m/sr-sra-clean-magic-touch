@@ -116,8 +116,14 @@ const Index = () => {
               </div>
               <p className="text-lg opacity-90">
                 Nosso chatbot inteligente está aqui para tirar todas suas dúvidas! 
-                <strong> Clique no ícone de chat</strong> no canto da tela e converse conosco agora mesmo.
+                <strong> 👉 CONVERSE COMIGO AQUI! 👈</strong> Clique no ícone de chat no canto da tela.
               </p>
+              <div className="text-center mt-4">
+                <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 animate-bounce">
+                  <MessageCircleIcon className="w-5 h-5 animate-pulse" />
+                  <span className="font-bold">Chat disponível 24h!</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -225,10 +231,10 @@ const Index = () => {
                 alt="Trabalho de limpeza realizado"
                 className="w-full h-64 object-cover"
               />
-              <CardContent className="p-6">
+              <CardContent className="p-6 cursor-pointer hover:bg-primary/5 transition-colors" onClick={() => window.open(faxinaService, '_blank')}>
                 <h3 className="text-xl font-semibold mb-2">Faxina Completa</h3>
                 <p className="text-muted-foreground">
-                  Limpeza profunda de áreas externas e internas com resultados impecáveis
+                  Limpeza profunda e organização de áreas internas com resultados impecáveis
                 </p>
               </CardContent>
             </Card>
@@ -239,13 +245,51 @@ const Index = () => {
                 alt="Marmitas preparadas"
                 className="w-full h-64 object-cover"
               />
-              <CardContent className="p-6">
+              <CardContent className="p-6 cursor-pointer hover:bg-primary/5 transition-colors" onClick={() => window.open(mealPrep, '_blank')}>
                 <h3 className="text-xl font-semibold mb-2">Marmitas Saudáveis</h3>
                 <p className="text-muted-foreground">
                   Refeições balanceadas e saborosas preparadas com ingredientes frescos
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Observações Section */}
+      <section className="py-16 bg-gradient-to-br from-yellow-50 to-orange-50 border-t-4 border-yellow-400">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-l-8 border-yellow-400">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <span className="text-2xl">⚠️</span>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-800">OBSERVAÇÕES IMPORTANTES!</h2>
+              </div>
+              
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-start gap-4 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                  <span className="text-yellow-600 font-bold text-lg">1.</span>
+                  <p className="text-lg">
+                    <strong>A faxina é realizada prioritariamente no INTERIOR do imóvel</strong> - áreas externas à combinar!
+                  </p>
+                </div>
+                
+                <div className="flex items-start gap-4 p-4 bg-orange-50 rounded-lg border-l-4 border-orange-400">
+                  <span className="text-orange-600 font-bold text-lg">2.</span>
+                  <p className="text-lg">
+                    <strong>Limpezas no interior de guarda-roupas, armários de cozinha, geladeiras</strong> são realizadas à parte e serão cobradas de acordo com o valor de tabela!
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-600">
+                  Para mais informações sobre valores e serviços adicionais, entre em contato conosco!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -277,10 +321,18 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="text-xl font-semibold mb-4">💬 Chatbot</h4>
-              <p className="text-white/90">
-                Use nosso chatbot para tirar dúvidas instantaneamente!
+              <h4 className="text-xl font-semibold mb-4">💬 Chatbot Inteligente</h4>
+              <p className="text-white/90 mb-3">
+                👉 <strong>CONVERSE COMIGO AQUI!</strong> 👈
               </p>
+              <p className="text-white/80 text-sm">
+                Chatbot disponível 24h para tirar suas dúvidas instantaneamente!
+              </p>
+              <div className="text-center mt-3">
+                <span className="text-xs bg-white/20 px-3 py-1 rounded-full">
+                  ⏰ Atualizado em tempo real
+                </span>
+              </div>
             </div>
           </div>
           
