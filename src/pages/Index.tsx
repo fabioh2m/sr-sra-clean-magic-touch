@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SchedulingForm } from "@/components/SchedulingForm";
 import { ChatbotEmbed } from "@/components/ChatbotEmbed";
+import ImageCarousel from "@/components/ImageCarousel";
 import { 
   PhoneIcon, 
   MessageCircleIcon, 
@@ -23,6 +24,14 @@ import mealPrep from "@/assets/meal-prep.png";
 const Index = () => {
   const [selectedService, setSelectedService] = useState<"faxina" | "chef" | null>(null);
   const [showScheduling, setShowScheduling] = useState(false);
+  const [showCarousel, setShowCarousel] = useState(false);
+
+  // Gallery images for cleaning service
+  const cleaningGalleryImages = [
+    cleaningWork,
+    faxinaService,
+    mealPrep // Using existing images as placeholder
+  ];
 
   const services = [
     {
@@ -39,7 +48,7 @@ const Index = () => {
       description: "Marmitas personalizadas e refeições sob medida",
       image: personalChefService,
       icon: <ChefHatIcon className="w-8 h-8" />,
-      features: ["Cardápio personalizado", "Ingredientes frescos", "Entrega programada", "Opções saudáveis"]
+      features: ["Cardápio personalizado", "Ingredientes frescos", "Entrega programada", "Comida fit e low carb", "Opções saudáveis"]
     }
   ];
 
@@ -118,10 +127,14 @@ const Index = () => {
                 Nosso chatbot inteligente está aqui para tirar todas suas dúvidas! 
                 <strong> 👉 CONVERSE COMIGO AQUI! 👈</strong> Clique no ícone de chat no canto da tela.
               </p>
-              <div className="text-center mt-4">
+              <div className="text-center mt-4 space-y-3">
                 <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 animate-bounce">
                   <MessageCircleIcon className="w-5 h-5 animate-pulse" />
                   <span className="font-bold">Chat disponível 24h!</span>
+                </div>
+                <div className="inline-flex items-center gap-2 bg-accent/30 rounded-full px-4 py-2 animate-bounce ml-4" style={{animationDelay: '1s'}}>
+                  <MessageCircleIcon className="w-5 h-5 animate-pulse" />
+                  <span className="font-bold text-accent-light">💬 Chatbot Inteligente</span>
                 </div>
               </div>
             </div>
@@ -231,7 +244,7 @@ const Index = () => {
                 alt="Trabalho de limpeza realizado"
                 className="w-full h-64 object-cover"
               />
-              <CardContent className="p-6 cursor-pointer hover:bg-primary/5 transition-colors" onClick={() => window.open(faxinaService, '_blank')}>
+              <CardContent className="p-6 cursor-pointer hover:bg-primary/5 transition-colors" onClick={() => setShowCarousel(true)}>
                 <h3 className="text-xl font-semibold mb-2">Faxina Completa</h3>
                 <p className="text-muted-foreground">
                   Limpeza profunda e organização de áreas internas com resultados impecáveis
@@ -343,6 +356,13 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Image Carousel */}
+      <ImageCarousel 
+        images={cleaningGalleryImages}
+        isOpen={showCarousel}
+        onClose={() => setShowCarousel(false)}
+      />
     </div>
   );
 };
